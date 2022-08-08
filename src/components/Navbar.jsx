@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.svg";
 import bars from "../assets/images/icon-menu.svg";
@@ -11,6 +11,10 @@ import reminderIcon from "../assets/images/icon-reminders.svg";
 import planningIcon from "../assets/images/icon-planning.svg";
 
 const Navbar = () => {
+	const [click, setClick] = useState(true);
+	const handleChange = () => setClick(!click);
+	const closeMobile = () => setClick(false);
+
 	return (
 		<header>
 			<nav className="navbar">
@@ -18,10 +22,12 @@ const Navbar = () => {
 				<img src={logo} className="logo" alt="" />
 
 				{/* nav-menu */}
-				<ul className="nav-menu">
+				<ul className={click ? "nav-menu active" : "nav-menu"}>
 					<li className="nav-item">
-						<Link to="/">Features</Link>
-						<ul className="sub-menu1">
+						<Link to="/" className="nav-link" onClick={closeMobile}>
+							Features
+						</Link>
+						{/* <ul className="sub-menu1">
 							<li className="sub-nav-item">
 								<Link to="/">
 									<img src={todoIcon} alt="todo" />
@@ -31,7 +37,7 @@ const Navbar = () => {
 							<li className="sub-nav-item">
 								<Link to="/">
 									<img src={calenderIcon} alt="calender" />
-									Calender
+									Calender 
 								</Link>
 							</li>
 							<li className="sub-nav-item">
@@ -46,11 +52,13 @@ const Navbar = () => {
 									Planning
 								</Link>
 							</li>
-						</ul>
+						</ul> */}
 					</li>
 					<li className="nav-item">
-						<Link to="/">Company</Link>
-						<ul className="sub-menu2">
+						<Link to="/" className="nav-link" onClick={closeMobile}>
+							Company
+						</Link>
+						{/* <ul className="sub-menu2">
 							<li className="sub-menu-item">
 								<Link to="/">History</Link>
 							</li>
@@ -60,18 +68,40 @@ const Navbar = () => {
 							<li className="sub-menu-item">
 								<Link to="/">Blog</Link>
 							</li>
-						</ul>
+						</ul> */}
 					</li>
 					<li className="nav-item">
-						<Link to="/">Careers</Link>
+						<Link to="/" className="nav-link" onClick={closeMobile}>
+							Careers
+						</Link>
 					</li>
 					<li className="nav-item">
-						<Link to="/">About</Link>
+						<Link to="/" className="nav-link" onClick={closeMobile}>
+							About
+						</Link>
+					</li>
+					<li className="nav-item">
+						<Link to="/" className="nav-link" onClick={closeMobile}>
+							Login
+						</Link>
+					</li>
+					<li className="nav-item">
+						<Link
+							to="/"
+							className="nav-link last"
+							onClick={closeMobile}
+						>
+							Register
+						</Link>
 					</li>
 				</ul>
-				<div className="buttons">
-					<button>Login</button>
-					<button>Register</button>
+
+				<div className="menu-icon" onClick={handleChange}>
+					{click ? (
+						<img src={times} alt="times" />
+					) : (
+						<img src={bars} alt="bars" />
+					)}
 				</div>
 			</nav>
 		</header>

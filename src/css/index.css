@@ -23,14 +23,61 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  background-color: gray;
+  height: 70px;
+}
+
+.logo {
+  margin-left: 3rem;
 }
 
 .nav-menu {
+  margin-left: 3rem;
+  list-style: none;
   display: flex;
+  width: 40%;
+  justify-content: space-between;
 }
 
-.nav-menu .sub-menu1,
-.sub-menu2 {
+.nav-item {
+  margin: auto 20px;
+}
+
+.nav-item .nav-link {
+  text-decoration: none;
+  color: var(--almostBlack);
+  transition: all 0.4s ease-out;
+}
+
+.nav-item .nav-link:hover {
+  color: blue;
+}
+
+.menu-icon {
+  transition: all 0.5s;
+  position: absolute;
+  right: 2rem;
   display: none;
+}
+
+@media screen and (max-width: 890px) {
+  .nav-menu {
+    display: none;
+  }
+  .nav-menu.active {
+    transition: 0.8s ease-out;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 30%;
+  }
+  .nav-item {
+    margin: 20px auto;
+  }
+  .menu-icon {
+    display: block;
+  }
 }/*# sourceMappingURL=index.css.map */

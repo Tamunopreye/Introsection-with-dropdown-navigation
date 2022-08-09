@@ -11,7 +11,7 @@ import reminderIcon from "../assets/images/icon-reminders.svg";
 import planningIcon from "../assets/images/icon-planning.svg";
 
 const Navbar = () => {
-	const [click, setClick] = useState(true);
+	const [click, setClick] = useState(false);
 	const handleChange = () => setClick(!click);
 	const closeMobile = () => setClick(false);
 
@@ -24,7 +24,11 @@ const Navbar = () => {
 				{/* nav-menu */}
 				<ul className={click ? "nav-menu active" : "nav-menu"}>
 					<li className="nav-item">
-						<Link to="/" className="nav-link" onClick={closeMobile}>
+						<Link
+							to="/"
+							className="nav-links"
+							onClick={closeMobile}
+						>
 							Features
 						</Link>
 						{/* <ul className="sub-menu1">
@@ -55,7 +59,11 @@ const Navbar = () => {
 						</ul> */}
 					</li>
 					<li className="nav-item">
-						<Link to="/" className="nav-link" onClick={closeMobile}>
+						<Link
+							to="/"
+							className="nav-links"
+							onClick={closeMobile}
+						>
 							Company
 						</Link>
 						{/* <ul className="sub-menu2">
@@ -71,24 +79,37 @@ const Navbar = () => {
 						</ul> */}
 					</li>
 					<li className="nav-item">
-						<Link to="/" className="nav-link" onClick={closeMobile}>
+						<Link
+							to="/"
+							className="nav-links"
+							onClick={closeMobile}
+						>
 							Careers
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/" className="nav-link" onClick={closeMobile}>
-							About
-						</Link>
-					</li>
-					<li className="nav-item">
-						<Link to="/" className="nav-link" onClick={closeMobile}>
-							Login
 						</Link>
 					</li>
 					<li className="nav-item">
 						<Link
 							to="/"
-							className="nav-link last"
+							className="nav-links"
+							onClick={closeMobile}
+						>
+							About
+						</Link>
+					</li>
+					<li className="nav-item">
+						<Link
+							to="/"
+							className="nav-links"
+							onClick={closeMobile}
+						>
+							Login
+						</Link>
+					</li>
+					<li className="nav-item">
+						<Link
+							id="register"
+							to="/"
+							className="nav-links"
 							onClick={closeMobile}
 						>
 							Register

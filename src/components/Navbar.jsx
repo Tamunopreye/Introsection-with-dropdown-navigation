@@ -27,36 +27,37 @@ const Navbar = () => {
 						<Link
 							to="/"
 							className="nav-links"
+							id="features"
 							onClick={closeMobile}
 						>
-							Features
+							Features <img src={arrowDown} alt="" />
 						</Link>
-						{/* <ul className="sub-menu1">
-							<li className="sub-nav-item">
-								<Link to="/">
+						<ul className="sub-menu">
+							<li className="sub-menu-item">
+								<Link to="/" className="sub-menu-links">
 									<img src={todoIcon} alt="todo" />
 									TodoList
 								</Link>
 							</li>
-							<li className="sub-nav-item">
-								<Link to="/">
+							<li className="sub-menu-item">
+								<Link to="/" className="sub-menu-links">
 									<img src={calenderIcon} alt="calender" />
-									Calender 
+									Calender
 								</Link>
 							</li>
-							<li className="sub-nav-item">
-								<Link to="/">
+							<li className="sub-menu-item">
+								<Link to="/" className="sub-menu-links">
 									<img src={reminderIcon} alt="reminders" />
 									Reminders
 								</Link>
 							</li>
-							<li className="sub-nav-item">
-								<Link to="/">
+							<li className="sub-menu-item">
+								<Link to="/" className="sub-menu-links">
 									<img src={planningIcon} alt="planning" />
 									Planning
 								</Link>
 							</li>
-						</ul> */}
+						</ul>
 					</li>
 					<li className="nav-item">
 						<Link
@@ -64,19 +65,25 @@ const Navbar = () => {
 							className="nav-links"
 							onClick={closeMobile}
 						>
-							Company
+							Company <img src={arrowDown} alt="" />
 						</Link>
-						{/* <ul className="sub-menu2">
+						<ul className="sub-menu">
 							<li className="sub-menu-item">
-								<Link to="/">History</Link>
+								<Link to="/" className="sub-menu-links">
+									History
+								</Link>
 							</li>
 							<li className="sub-menu-item">
-								<Link to="/">Our Team</Link>
+								<Link to="/" className="sub-menu-links">
+									Our Team
+								</Link>
 							</li>
 							<li className="sub-menu-item">
-								<Link to="/">Blog</Link>
+								<Link to="/" className="sub-menu-links">
+									Blog
+								</Link>
 							</li>
-						</ul> */}
+						</ul>
 					</li>
 					<li className="nav-item">
 						<Link
@@ -96,7 +103,7 @@ const Navbar = () => {
 							About
 						</Link>
 					</li>
-					<li className="nav-item">
+					<li className="nav-item center" id="login">
 						<Link
 							to="/"
 							className="nav-links"
@@ -105,7 +112,7 @@ const Navbar = () => {
 							Login
 						</Link>
 					</li>
-					<li className="nav-item">
+					<li className="nav-item center">
 						<Link
 							id="register"
 							to="/"

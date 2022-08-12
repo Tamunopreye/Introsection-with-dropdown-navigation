@@ -30,29 +30,45 @@ const Navbar = () => {
 							id="features"
 							onClick={closeMobile}
 						>
-							Features <img src={arrowDown} alt="" />
+							Features <img src={arrowDown} alt="arrowup" />
 						</Link>
 						<ul className="sub-menu">
 							<li className="sub-menu-item">
-								<Link to="/" className="sub-menu-links">
+								<Link
+									to="/"
+									className="sub-menu-links"
+									onClick={closeMobile}
+								>
 									<img src={todoIcon} alt="todo" />
 									TodoList
 								</Link>
 							</li>
 							<li className="sub-menu-item">
-								<Link to="/" className="sub-menu-links">
+								<Link
+									to="/"
+									className="sub-menu-links"
+									onClick={closeMobile}
+								>
 									<img src={calenderIcon} alt="calender" />
 									Calender
 								</Link>
 							</li>
 							<li className="sub-menu-item">
-								<Link to="/" className="sub-menu-links">
+								<Link
+									to="/"
+									className="sub-menu-links"
+									onClick={closeMobile}
+								>
 									<img src={reminderIcon} alt="reminders" />
 									Reminders
 								</Link>
 							</li>
 							<li className="sub-menu-item">
-								<Link to="/" className="sub-menu-links">
+								<Link
+									to="/"
+									className="sub-menu-links"
+									onClick={closeMobile}
+								>
 									<img src={planningIcon} alt="planning" />
 									Planning
 								</Link>
@@ -65,7 +81,7 @@ const Navbar = () => {
 							className="nav-links"
 							onClick={closeMobile}
 						>
-							Company <img src={arrowDown} alt="" />
+							Company <img src={arrowDown} alt="arrowup" />
 						</Link>
 						<ul className="sub-menu">
 							<li className="sub-menu-item">
@@ -103,7 +119,7 @@ const Navbar = () => {
 							About
 						</Link>
 					</li>
-					<li className="nav-item center" id="login">
+					<li className="nav-item center login">
 						<Link
 							to="/"
 							className="nav-links"
@@ -112,7 +128,7 @@ const Navbar = () => {
 							Login
 						</Link>
 					</li>
-					<li className="nav-item center">
+					<li className="nav-item center register">
 						<Link
 							id="register"
 							to="/"

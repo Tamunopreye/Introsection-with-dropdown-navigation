@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
 
 * {
 	margin: 0;
@@ -14,12 +14,14 @@
 
 body {
 	font-family: "Epilogue", sans-serif;
+	overflow: hidden;
 }
 .App {
 	background-color: var(--almostWhite);
-	overflow: hidden;
+	// overflow-y: scroll;
+	overflow-x: hidden;
 	// display: flex;
-	height: 100vh;
+	min-height: 100vh;
 }
 .navbar {
 	// background-color: gray;
@@ -50,14 +52,20 @@ body {
 }
 
 .sub-menu {
+	background-color: white;
+	border-radius: 10px;
 	display: none;
 	list-style: none;
 	position: absolute;
+	padding: 10px;
 	// left: -100px;
 	// display: none;
 }
 .sub-menu-item {
 	margin: 10px auto;
+}
+.sub-menu-item img {
+	margin-right: 10px;
 }
 .sub-menu .sub-menu-links {
 	color: var(--almostBlack);
@@ -71,34 +79,48 @@ body {
 }
 
 .menu-icon {
+	cursor: pointer;
 	display: none;
 	margin-left: auto;
 	margin-right: 3rem;
 }
-@media screen and (min-width: 1100px) {
-	#login {
-		margin-left: 500px;
+@media screen and (min-width: 950px) {
+	.login {
+		position: absolute;
+		right: 200px;
+	}
+	.register {
+		position: absolute;
+		right: 30px;
 	}
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
 	.menu-icon {
 		display: block;
+		z-index: 100;
+		position: fixed;
+		right: 0;
 	}
 	.nav-menu {
-		// background-color: gray;
+		background-color: var(--almostWhite);
 		text-align: start;
 		display: block;
-		position: absolute;
-		top: -100%;
-		right: 0;
-		width: 30%;
+		position: fixed;
+		top: 0;
+		right: -100%;
+		// right: 0;
+		width: 50%;
 		height: 100%;
-		opacity: 1;
+		opacity: 0;
 		transition: all 0.9s ease-in-out;
 	}
 	.nav-menu.active {
-		top: 70px;
+		right: 0;
+		opacity: 1;
+	}
+	.nav-item:first-child {
+		margin-top: 100px;
 	}
 	.nav-item {
 		margin: 20px 10px;
@@ -109,8 +131,67 @@ body {
 	.center {
 		text-align: center;
 	}
+	.sub-menu {
+		overflow: hidden;
+		width: 60%;
+		margin-left: 20px;
+		// display: flex;
+	}
 	.nav-item:hover .sub-menu {
+		text-align: start;
 		position: relative;
 		display: block;
+	}
+}
+
+section {
+	.container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 70px;
+		// height: 30vh;
+		margin: auto 11rem;
+		.contents {
+			font-size: larger;
+			// margin-top: 70px;
+
+			h1 {
+				font-size: 3.7rem;
+				margin-top: 120px;
+				margin-bottom: 50px;
+			}
+			p {
+				letter-spacing: 0.8px;
+				margin-bottom: 50px;
+			}
+			button {
+				padding: 10px 20px;
+				background-color: transparent;
+				border: 2px solid;
+				border-radius: 10px;
+				font-size: 1rem;
+				font-weight: 900;
+				margin-bottom: 40px;
+			}
+
+			.footer {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 30px;
+			}
+		}
+		.img-container {
+			img {
+				width: 100%;
+				height: 550px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 950px) {
+	section {
+	
+		}
 	}
 }
